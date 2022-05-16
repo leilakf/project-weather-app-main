@@ -60,6 +60,8 @@ console.log(response);
   let humidity=document.querySelector("#humidity");
   let cityhumidity=response.data.main.humidity;
   humidity.innerHTML=`Humidity:${cityhumidity}%`;
+  let iconElement=document.querySelector("#icon");
+  iconElement.setAttribute("src","")
 
 }
 
