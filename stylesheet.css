@@ -62,6 +62,14 @@ color:#5a6275;
 .col-sm-3 h2{ font-weight: bold;
 color:#5a6275;
 }
+.temperature{
+    font-size: 40px;
+    color:#545558;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+  
+
+}
 .Day-first{
 font-size: 13px;
 color:#808aa0;
@@ -214,6 +222,20 @@ text-decoration: none;
    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
    
 } */
+
+.weather-temperature .active{
+  color: blueviolet; 
+  cursor:default ; 
+
+}
+
+.weather-temperature .active:hover{
+ text-decoration: none;
+
+}
+
+
+
 .leila{
 padding:0px 350px ;
 

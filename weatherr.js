@@ -33,17 +33,24 @@ date.innerHTML=`${day} ${hours}:${minutes} `;
 function showtemp(response){
   let temperature=Math.round(response.data.main.temp);
   let span=document.querySelector(".temperature");
+
   span.innerHTML=`${temperature}`;
   let cityname=document.querySelector(".citty");
+
   cityname.innerHTML=`${response.data.name}`;
   let discription=document.querySelector(".see");
+
   discription.innerHTML=`${response.data.weather[0].main }`;
   let windspeed=document.querySelector("#wind");
   let cityspeed=Math.round(response.data.wind.speed);
+
   windspeed.innerHTML=`Wind:${cityspeed} km.h`;
   let humidity=document.querySelector("#humidity");
+
   let cityhumidity=response.data.main.humidity;
   humidity.innerHTML=`Humidity:${cityhumidity}%`;
+
+  CilsiusTemperature=Math.round (response.data.main.temp);
  
 
 }
@@ -68,14 +75,48 @@ function handleSubmit(event){
 }
 
 
+
+function displayFahrenheitTemperture(event){
+event.preventDefault();
+
+
+let FahrenheitTemperture=Math.round((CilsiusTemperature * 9/5) + 32 );
+
+let temperatureElement=document.querySelector(".temperature");
+temperatureElement.innerHTML=FahrenheitTemperture;
+// remove the active class the  celsiuslink
+celsiuslink.classList.remove("active");
+fahrenheitlink.classList.add("active");
+
+
+
+}
+function displaycelsiusTemperture(event){
+event.preventDefault();
+let temperatureElement=document.querySelector(".temperature");
+temperatureElement.innerHTML=CilsiusTemperature;
+
+// remove the active class the  fahrenheitlink
+celsiuslink.classList.add("active");
+fahrenheitlink.classList.remove("active");
+
+}
+
+ 
+let CilsiusTemperature=null;
+
 let form=document.querySelector("#search-form");
 form.addEventListener("submit",handleSubmit);
 
+
+let fahrenheitlink=document.querySelector("#fahrenheit-link");
+fahrenheitlink.addEventListener("click",displayFahrenheitTemperture);
+
+let celsiuslink=document.querySelector("#celsius-link");
+celsiuslink.addEventListener("click",displaycelsiusTemperture);
+
+
 search("New York");
-
-
-
-
 
 
 
