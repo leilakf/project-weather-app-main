@@ -31,12 +31,12 @@ date.innerHTML=`${day} ${hours}:${minutes} `;
 //update city
 
 function searchcity (event){
-
 event.preventDefault();
  let units = "metric";
 let keyapi="d045ef62d06fb179edb328171922730c";
 let city=document.querySelector(".form-control").value;
 let urlapi=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${keyapi}&units=${units}`;
+console.log(urlapi);
 
 axios.get(`${urlapi}`).then(showtemp);
 }
@@ -46,7 +46,6 @@ axios.get(`${urlapi}`).then(showtemp);
  form.addEventListener("submit",searchcity);
 
 function showtemp(response){
-console.log(response);
   let temperature=Math.round(response.data.main.temp);
   let span=document.querySelector(".temperature");
   span.innerHTML=`${temperature}`;
@@ -60,11 +59,19 @@ console.log(response);
   let humidity=document.querySelector("#humidity");
   let cityhumidity=response.data.main.humidity;
   humidity.innerHTML=`Humidity:${cityhumidity}%`;
-  let iconElement=document.querySelector("#icon");
-  iconElement.setAttribute("src","")
+  // let iconElement=document.querySelector("#icon");
+  // iconElement.setAttribute("src",`icons/${response.data.weather[0].icon}.jpg`);
+
+}
+// city serch under serch city
+function handelsubmit(event){
+    event.preventDefault();
+ 
+  cityname.innerHTML="#btn1";
 
 }
 
-
+let cityElement=document.querySelector("#btn1");
+cityElement.addEventListener("submit",handelsubmit);
 
   

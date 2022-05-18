@@ -7,5 +7,7 @@
 			"path": "..\\..\\..\\..\\..\\icons"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "project-weather-app-main"
+	}
 }

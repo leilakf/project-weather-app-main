@@ -144,8 +144,15 @@ hr.style18 {
 
 }
 .icon-1{
-    width: 90px;
-    padding-left: 11px;
+    width:90px;
+    height: 80px;
+ padding: 8px;
+ padding-left: 30px;
+ 
+
+
+
+  
  
      
 }
@@ -174,11 +181,14 @@ hr.style18 {
 }
 .degree{
     font-size: 13px;
-    padding-top: 10px;
+    padding-top: 17px;
     padding-left: 20px;
     margin-left: 28px;
   
 
+}
+#degree-1{
+    padding-top: 0;
 }
 #celsius-link {
 text-decoration: none;
