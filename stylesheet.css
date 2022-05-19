@@ -14,11 +14,8 @@ body{
     height:500px ;
     box-shadow:5px 5px 11px 3px lightblue ;
     margin-bottom: 10px;
-    
+   background-color: #dbe0ee;
 
-}
-.weather-app:hover{
-   
 }
 
 
@@ -146,54 +143,17 @@ hr.style18 {
 	border-right: 1px solid rgb(48,49,51);
 }
 
-.col-sm-2 p{
-    padding-left: 40px;
-    margin:6px;
+.weather-forcast{
+margin-top:0px;
+text-align: center;
 
 }
-.icon-1{
-    width:90px;
-    height: 80px;
- padding: 8px;
- padding-left: 30px;
- 
-
-
-
-  
- 
-     
+.weather-forecast-date{
+    font-size: 16px;
+    margin-bottom: 8px;
 }
-.icon-2{
-    width:92px;
-    height: 60px;
-    padding-left:30px;
-    padding-top: 5px;
-}
-.icon-3{
-    width:90px;
-    height: 63px;
-    padding-left: 28px;
-    padding-top: 5px;
-}
-.icon-4{
-    width:83px;
-    height: 64px;
-    padding-left: 28px;
-}
-.icon-5{
-    width:92px;
-    height: 60px;
-    padding-left:30px;
-    padding-top: 5px;
-}
-.degree{
+.weather-forecast-temperatures{
     font-size: 13px;
-    padding-top: 17px;
-    padding-left: 20px;
-    margin-left: 28px;
-  
-
 }
 #degree-1{
     padding-top: 0;
@@ -223,17 +183,7 @@ text-decoration: none;
    
 } */
 
-.weather-temperature .active{
-  color: blueviolet; 
-  cursor:default ; 
-
-}
-
-.weather-temperature .active:hover{
- text-decoration: none;
-
-}
-
+/* 
 
 
 .leila{
