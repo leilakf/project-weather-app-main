@@ -77,7 +77,7 @@ if (iconElement>=801 && iconElement<=804){
   mastericon.src="icons/04n.gif ";
 }
 else{
-  alert("your search is uncorect");
+
 }
 }
 // Weather Search / Search engine
