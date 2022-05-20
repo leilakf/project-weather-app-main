@@ -111,7 +111,7 @@ function setSrcIcon(ID, Icon) {
 
   let mastericon = document.querySelector("#master-icon");
   if (ID >= 200 && ID <= 232) {
-    mastericon.src = "icons/11d.gif";
+    mastericon.src = "icons/11n.gif";
   }
   if (ID >= 300 && ID <= 321) {
     mastericon.src = "icons/09d.gif";
@@ -125,12 +125,11 @@ function setSrcIcon(ID, Icon) {
   if (ID >= 600 && ID <= 622) {
     mastericon.src = "icons/13d.gif";
   }
-
   if (ID >= 701 && ID <= 781) {
     mastericon.src = "icons/50d.gif";
   }
   if (ID >= 801 && ID <= 804) {
-    mastericon.src = "icons/04d.gif ";
+    mastericon.src = "icons/04n.gif ";
   }
   if (ID == 800 && Icon.includes("01n")) {
     mastericon.src = "icons/01n.gif";
