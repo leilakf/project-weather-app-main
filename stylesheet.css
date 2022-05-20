@@ -1,6 +1,7 @@
 
 body{
     font-family: sans-serif;
+   
     
 }
 
@@ -12,9 +13,9 @@ body{
     border-radius: 36px;
     width:500px;
     height:500px ;
-    box-shadow:5px 5px 11px 3px lightblue ;
+    box-shadow:5px 5px 11px 3px rgb(126, 208, 235) ;
     margin-bottom: 10px;
-   background-color: #dbe0ee;
+   background-color:#b9e3ff;
 
 }
 
