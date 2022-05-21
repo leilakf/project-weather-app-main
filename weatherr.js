@@ -25,7 +25,7 @@ date.innerHTML = `${day} ${hours}:${minutes} `;
 //  city temp //
 
 function showtemp(response) {
-  console.log(response.data);
+ 
   let temperature = Math.round(response.data.main.temp);
   let span = document.querySelector(".temperature");
   span.innerHTML = `${temperature}`;
@@ -45,16 +45,18 @@ function showtemp(response) {
   humidity.innerHTML = `Humidity:${cityhumidity}%`;
 
   CilsiusTemperature = Math.round(response.data.main.temp);
-  debugger;
+
   let ID = response.data.weather[0].id;
   let Icon = response.data.weather[0].icon
   setSrcIcon(ID, Icon);
+
+getForecast(response.data.coord);
 
 }
 
 //search for city//
 function search(city) {
-  debugger;
+
   let units = "metric";
   let keyapi = "d045ef62d06fb179edb328171922730c";
   let urlapi = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${keyapi}&units=${units}`;
@@ -104,8 +106,7 @@ fahrenheitlink.addEventListener("click", displayFahrenheitTemperture);
 let celsiuslink = document.querySelector("#celsius-link");
 celsiuslink.addEventListener("click", displaycelsiusTemperture);
 
-// city defult
-search("new york");
+
 
 function setSrcIcon(ID, Icon) {
 
@@ -139,7 +140,51 @@ function setSrcIcon(ID, Icon) {
   }
 }
 
+// forecast
+
+function displayForecast(response) {
+ 
+  let forecastElement = document.querySelector("#Forecast");
+
+  let forecastHTML = ` <div class="row">`
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+  days.forEach(function (day) {
+    forecastHTML = forecastHTML +
+      ` 
+       <div class="col-sm-2">
+        <div class="weather-forecast-date"> ${day} </div>            
+           <img class="icon-1" src="icons/01d.gif" alt="" width="55" >
+            <div class="weather-forecast-temperatures" id="degree-1">
+              <span  class="weather-forecast-temperatures-max">
+                  18°
+                  </span>  
+               <span class="weather-forecast-temperatures-min">
+                  12°
+               </span>    
+             </div>
+         </div>           
+  `;
+  })
+
+  forecastHTML = forecastHTML + `</div>`
+  forecastElement.innerHTML = forecastHTML
+}
+;
+function getForecast(coordinates){
+
+let keyapi = "d045ef62d06fb179edb328171922730c";
+let urlapi =`https://api.openweathermap.org/data/2.5/onecall?
+lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${keyapi}&units=metric`
+
+axios.get(`${urlapi}`).then(displayForecast());
+}
 
 
 
 
+// function read
+
+// displayForecast() ;
+
+// city defult
+search("new york");
