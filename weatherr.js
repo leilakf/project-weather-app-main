@@ -25,7 +25,7 @@ date.innerHTML = `${day} ${hours}:${minutes} `;
 //  city temp //
 
 function showtemp(response) {
- 
+
   let temperature = Math.round(response.data.main.temp);
   let span = document.querySelector(".temperature");
   span.innerHTML = `${temperature}`;
@@ -50,7 +50,7 @@ function showtemp(response) {
   let Icon = response.data.weather[0].icon
   setSrcIcon(ID, Icon);
 
-getForecast(response.data.coord);
+  getForecast(response.data.coord);
 
 }
 
@@ -142,49 +142,65 @@ function setSrcIcon(ID, Icon) {
 
 // forecast
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 function displayForecast(response) {
- 
+
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#Forecast");
 
-  let forecastHTML = ` <div class="row">`
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
-  days.forEach(function (day) {
-    forecastHTML = forecastHTML +
-      ` 
-       <div class="col-sm-2">
-        <div class="weather-forecast-date"> ${day} </div>            
-           <img class="icon-1" src="icons/01d.gif" alt="" width="55" >
+  let forecastHTML = `<div class="row">`
+
+  forecast.forEach(function (forecastDay, index) {
+
+    if (index < 6) {
+
+      forecastHTML =
+        forecastHTML +
+        `
+       <div class="col-2">
+        <div class="weather-forecast-date"> ${formatDay(forecastDay.dt)} </div>            
+           <img class="icon-1" 
+           src="icons/${forecastDay.weather[0].icon}.gif" alt="" width="55" >
             <div class="weather-forecast-temperatures" id="degree-1">
               <span  class="weather-forecast-temperatures-max">
-                  18°
+              ${Math.round(forecastDay.temp.max)} °
                   </span>  
                <span class="weather-forecast-temperatures-min">
-                  12°
+                 ${Math.round(forecastDay.temp.min)} °
                </span>    
              </div>
          </div>           
   `;
+    }
   })
 
   forecastHTML = forecastHTML + `</div>`
   forecastElement.innerHTML = forecastHTML
+
 }
 ;
-function getForecast(coordinates){
+function getForecast(coordinates) {
 
-let keyapi = "d045ef62d06fb179edb328171922730c";
-let urlapi =`https://api.openweathermap.org/data/2.5/onecall?
-lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${keyapi}&units=metric`
+  let keyapi = "d045ef62d06fb179edb328171922730c";
+  let urlapi = `https://api.openweathermap.org/data/2.5/onecall?
+lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${keyapi}&units=metric`;
 
-axios.get(`${urlapi}`).then(displayForecast());
+  axios.get(`${urlapi}`).then(displayForecast);
+
 }
 
 
 
 
-// function read
-
-// displayForecast() ;
 
 // city defult
 search("new york");
