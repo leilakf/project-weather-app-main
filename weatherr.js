@@ -38,7 +38,7 @@ function showtemp(response) {
 
   let windspeed = document.querySelector("#wind");
   let cityspeed = Math.round(response.data.wind.speed);
-  windspeed.innerHTML = `Wind:${cityspeed} km.h`;
+  windspeed.innerHTML = `Wind:${cityspeed} m.h`;
 
   let humidity = document.querySelector("#humidity");
   let cityhumidity = response.data.main.humidity;
@@ -106,7 +106,7 @@ fahrenheitlink.addEventListener("click", displayFahrenheitTemperture);
 let celsiuslink = document.querySelector("#celsius-link");
 celsiuslink.addEventListener("click", displaycelsiusTemperture);
 
-
+// display icon//
 
 function setSrcIcon(ID, Icon) {
 
@@ -172,10 +172,10 @@ function displayForecast(response) {
            src="icons/${forecastDay.weather[0].icon}.gif" alt="" width="55" >
             <div class="weather-forecast-temperatures" id="degree-1">
               <span  class="weather-forecast-temperatures-max">
-              ${Math.round(forecastDay.temp.max)} °
+              ${Math.round(forecastDay.temp.max)}°
                   </span>  
                <span class="weather-forecast-temperatures-min">
-                 ${Math.round(forecastDay.temp.min)} °
+                 ${Math.round(forecastDay.temp.min)}°
                </span>    
              </div>
          </div>           
@@ -197,10 +197,6 @@ lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${keyapi}&units=metric`;
   axios.get(`${urlapi}`).then(displayForecast);
 
 }
-
-
-
-
 
 // city defult
 search("new york");
