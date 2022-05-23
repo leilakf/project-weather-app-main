@@ -1,6 +1,7 @@
 body {
-    font-family: sans-serif;
-
+    font-family: "Josefin Sans", sans-serif;
+    background-image:url("icons/FcsA.gif");
+  background-size: cover;
 
 }
 
@@ -48,6 +49,7 @@ body {
 
 
 
+
 }
 
 .city button {
@@ -60,8 +62,7 @@ body {
 #mastercity {
     font-weight: bold;
     color: #4a4c53;
-
-
+    
 }
 
 .col-sm-4 h2 {
@@ -85,15 +86,17 @@ body {
 }
 
 .Day-first {
-    font-size: 13px;
+    font-size: 16px;
     color: #808aa0;
     padding: 0px;
+    font-weight: bold;
 }
 
 .see {
-    font-size: 13px;
+    font-size: 15px;
     color: #808aa0;
     padding: 0px;
+    font-weight: bold;
 
 }
 
@@ -137,7 +140,7 @@ li {
 }
 
 .div-arrow-down {
-    background-color: rgb(82, 230, 230);
+    background-color: rgb(194, 165, 0);
 }
 
 .div-arrow-down:after {
@@ -165,6 +168,7 @@ li {
     margin-bottom: 8px;
     font-weight: bold;
     opacity: 0.6;
+    
 
 }
 
@@ -184,10 +188,12 @@ li {
 
 #celsius-link {
     text-decoration: none;
+    font-weight: bold;
 }
 
 #fahrenheit-link {
     text-decoration: none;
+    font-weight: bold;
 }
 
 .weather-temperature .active {
@@ -204,5 +210,5 @@ li {
 
 .leila {
     padding: 0px 350px;
-
+font-weight: bold;
 }
