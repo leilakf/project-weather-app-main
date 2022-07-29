@@ -53,7 +53,6 @@ function showtemp(response) {
   getForecast(response.data.coord);
 
 }
-
 //search for city//
 function search(city) {
 
@@ -197,6 +196,5 @@ lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${keyapi}&units=metric`;
   axios.get(`${urlapi}`).then(displayForecast);
 
 }
-
 // city defult
 search("tehran");
